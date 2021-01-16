@@ -38,3 +38,13 @@ nav .linea:hover{
     background-color: rgba(255, 255, 255, 0.3);
     color: rgb(7, 132, 204);
 }
+
+#game {
+    width: 200px; 
+}
+
+.card {
+    background-color: brown; 
+    width: 200px; 
+    height: 600px;
+}
