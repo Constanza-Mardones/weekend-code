@@ -1,0 +1,17 @@
+*{
+ margin:0px;
+ padding:0px;
+ box-sizing: border-box;
+}
+.menu{
+    height: 80px;
+    background-color: rgb(7, 0, 104);
+}
+.menu button{
+    color:white;
+    background-color: rgb(7, 0, 104);
+    display: inline;
+    padding: 5px;
+    border: transparent;
+    font-size: 20px;
+}
