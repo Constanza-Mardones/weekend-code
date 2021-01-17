@@ -1,9 +1,8 @@
 // Creacion de Variables
 var build = barajarCards();
-var timer = 30;
+var movimientos = 0;
 var actualCard = null;
 var listas = 0;
-var ganaste = false;
 
 //Funcion que se encarga de Barajar las cartas
 function barajarCards(){
@@ -50,18 +49,8 @@ function tipeCard(id){
     }
 }
 // funcion que se encarga de imprimir el tiempo en pantalla
-function displayTimer(){
-    document.getElementById("timer").innerHTML = timer;
-}
-// Funcion que se encarga de restar el tiempo y verificar si el juego termina
-function restTimer(){
-    if (!ganaste){
-        timer -= 1;
-        if (timer <= 0){
-            window.location.href = "lose.html";
-        }
-        displayTimer();
-    }
+function displayIntentos(){
+    document.getElementById("intentos").innerHTML = movimientos;
 }
 //Funcion encargada de comparar las cartas y ademas de verificar si has ganado
 function comparar(code,bestia){
@@ -74,24 +63,27 @@ function comparar(code,bestia){
     }
     if (actualCard.animal === bestia){
         listas += 1;
+        movimientos += 1;
         actualCard = null;
+        displayIntentos();
     } else {
         setTimeout(function () {
             document.getElementById(code.toString()).style.backgroundImage = 'url("images/carta.png")';
             document.getElementById(actualCard.id.toString()).style.backgroundImage = 'url("images/carta.png")';
             actualCard = null;
         }, 500);
+        movimientos += 1;
+        displayIntentos();
     }
     if (listas == 6){
-        ganaste = true;
-        alert("Has Ganado");
+        alert("Felicidades, Lo has Resuelto en "+movimientos.toString());
     }
 }
 
 //Creacion del mundo
 
 displayCards();
-displayTimer();
+displayIntentos();
 
 //acciones de botones
 
@@ -167,5 +159,3 @@ document.getElementById('12').onclick = function() {
         tipeCard(12);
     }
 };
-
-setInterval(restTimer,1000);
