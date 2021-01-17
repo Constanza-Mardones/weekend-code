@@ -4,7 +4,7 @@
  box-sizing: border-box;
 }
 body{
-    height: 800px;
+    height: 625px;
     background: linear-gradient(to bottom, blue, #2eceff);
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,20 +44,36 @@ nav .linea a{
 nav .linea:hover{
     background-color: rgba(255, 255, 255, 0.3);
 }
-.encabezado{
+#encabezado h1 {
     text-align: center;
     color:white;
     font-family: Arial;
-}
-.encabezado h1{
     font-size: 40px;
     margin-top: 50px;
 }
+.botoniz{
+    margin-top: 100px;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+    font-family: Arial;
+    color:white;
+}
+.botonder{
+    margin-top: 100px;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+    font-family: Arial;
+    color:white;
+}
+.encabezado h2{
+    margin-bottom: 15px;
+}
 .encabezado p{
-    margin: 50px;
+    margin-top: 20px;
     font-size: 25px;
 }
-
 /* memorice html */
 #game {
     width: 900px; 
@@ -109,11 +125,6 @@ h1{
 }
 #fondo{
     opacity: 0.55;
-}
-h1{
-    color:white;
-    font-family: arial;
-    text-align: center;
 }
 #recuadro{
     display: block;
