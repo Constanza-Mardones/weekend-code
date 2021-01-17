@@ -145,12 +145,70 @@ nav .linea:hover{
 }
 /* lectura html */
 .lectura{
+    width: 100%;
+    background-color: white;
     text-align: center;
     font-family: arial;
     text-align: center;
-    color:white;
+    padding-bottom: 10px;
 }
 .lectura h1{
-    margin-top: 15px;
+    padding-top: 20px;
+    color:rgb(73, 73, 73);
+    margin-bottom: 30px;
 }
+.poesia{
+    margin-top: 20px;
+    width: 1000;
+    vertical-align: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.poesia h2{
+    font-family: arial;
+    font-size: 24px;
+    color: darkgreen;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 50px;
+}
+.cuentos{
+    font-family: arial;
+}
+.cuentos h2{
+    font-size: 24px;
+    color: rgb(14, 81, 182);
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 80px;
+}
+.cuentos img{
+    text-align: center;
+    margin-left: 60px;
+}
+.cuentos p{
+ font-size: 30px;
+ text-align: center;
+ padding:20px;
+}
+.noticias h2{
+    font-family: arial;
+    font-size: 24px;
+    color: rgb(211, 105, 19);
+    margin-top: 60px;
+    margin-bottom: 25px;
+    text-align: left;
+    padding-left: 80px;
+}
+.noticias p{
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+.noticias{
+    margin-bottom: 30px;
 
+}
