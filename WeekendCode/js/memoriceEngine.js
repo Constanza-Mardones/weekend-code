@@ -76,7 +76,7 @@ function comparar(code,bestia){
         displayIntentos();
     }
     if (listas == 6){
-        alert("Felicidades, Lo has Resuelto en "+movimientos.toString());
+        alert("Felicidades, Lo has Resuelto en "+movimientos.toString() + " movimientos.");
     }
 }
 
