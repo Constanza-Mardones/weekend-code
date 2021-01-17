@@ -36,23 +36,56 @@ function mover(evt){
     yinicial = evt.clientY;
     seleccionelemento.setAttribute("onmouseout","deseleccion(evt)");
     seleccionelemento.setAttribute("onmouseup","deseleccion(evt)");
+    iman();
 }
 
 function deseleccion(evt){
     if(seleccionelemento !=0){
+        console.log("posicion X: "+seleccionelemento.getAttribute("x"));
+        console.log("posicion Y: "+seleccionelemento.getAttribute("y"));
         seleccionelemento.removeAttribute("onmousemove"); 
         seleccionelemento.removeAttribute("onmouseout"); 
         seleccionelemento.removeAttribute("onmouseup"); 
         seleccionelemento = 0;
     }
+    testing();
 }
 var recuadro = document.getElementById('recuadro');
 
 function reordenar(evt){
-var herencia = evt.target.parentNode;
-var clonar = herencia.cloneNode(true);
-var id= herencia.getAttribute("id");
-recuadro.removeChild(document.getElementById(id));
-recuadro.appendChild(clonar);
-return recuadro.lastChild.firstChild;
+    var herencia = evt.target.parentNode;
+    var clonar = herencia.cloneNode(true);
+    var id= herencia.getAttribute("id");
+    console.log("Imagen id: "+id)
+    recuadro.removeChild(document.getElementById(id));
+    recuadro.appendChild(clonar);
+    return recuadro.lastChild.firstChild;
+}
+
+var origX = [222,309,425,569,685,222,308,423,539,655,222,308,424,569,655];
+var origY = [73,74,74,74,74,162,191,160,191,191,307,307,276,307,307];
+
+function iman(){
+    for (var i=0; i<imagenes.length; i++){
+        if(Math.abs(xfinal-origX[i])<15 && Math.abs(yfinal-origY[i])<15){
+            seleccionelemento.setAttribute("x",origX[i]);
+            seleccionelemento.setAttribute("y",origY[i]);
+        }
+    }
+}
+
+function testing(){
+    var listas = 0;
+    var padres = document.getElementsByClassName('herencia');
+    for (var i=0; i<imagenes.length; i++){
+        var posX = parseFloat(padres[i].firstChild.getAttribute("x"));
+        var posY = parseFloat(padres[i].firstChild.getAttribute("y"));
+        ide = padres[i].getAttribute("id");
+        if(origX[ide] == posX && origY[ide] == posY){
+            listas += 1;
+        }
+    }
+    if (listas === 15){
+        alert("Felicidades haz completado el Puzzle");
+    }
 }
